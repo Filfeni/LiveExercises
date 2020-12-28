@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Exercises.Views.MainPage"
+             xmlns:local ="clr-namespace:Exercises.Views.CustomControls"
+             xmlns:effects ="clr-namespace:Exercises.Views.Effects">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="{Binding OrientationText}"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+            <Button Command="{Binding GetOrientationCommand}" Text="Get Orientation" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Button>
+            <Label Text="Custom Entry Control with Focused Effect" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand"></Label>
+            <local:MyEntry Text="In Shared Code" VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <local:MyEntry.Effects>
+                    <effects:FocusEffect/>
+                </local:MyEntry.Effects>
+
+            </local:MyEntry>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
